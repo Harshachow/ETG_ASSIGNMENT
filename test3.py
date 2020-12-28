@@ -16,29 +16,29 @@ def main():
 	rows=len(lines)					#returns no of rows
 	cols=len(lines[0].split(' '))		#returns number of columns
 	arr=[]
-	for i in lines:
-		for j in i.split(' '):
+	for i in lines:				#or rach row
+		for j in i.split(' '):		#for each word in a column that is seperated by whitespace
 			words.append(j) 	
 	#print(words)
 	k=0
-	for i in range(3):
+	for i in range(cols):
 		
 		m=k
-		for p in range(5):
+		for p in range(rows):
 			#print(words[m])
-			arr.append(words[m])
+			arr.append(words[m])	#appends in such a way that the words are appended in column wise
 			#print(words[m])
-			m=m+3
+			m=m+cols
 
 		k=k+1
 		
 	print(arr)
 	val=input("enter the string : ")
-	flag=0
+	flag=0					#flag is to verify whether given input is in the word array or not
 	for i in range(len(words)):
 		if val==arr[i]:
 			t=i
-			flag=1
+			flag=1  	#tells given word does exist in word array
 
 	
 	if flag==0:
